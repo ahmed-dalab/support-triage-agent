@@ -15,11 +15,13 @@ This agent reads customer support tickets and recommends what support should do 
 - request_info: ask the customer for missing details (e.g. receipt, transaction ID)
 - escalate: the ticket needs a specialist or technical person
 - human_review: a human must investigate because the evidence isn't enough to decide safely
+- out_of_scope: the request isn't a support issue we handle; reply politely saying so
 
 Getting data from our own systems is a tool call made before deciding, not a decision.
 
 ## Tie-break rule
-If a ticket fits more than one category and money is involved, use billing.
+- If the customer asks for money back, use refund.
+- Otherwise, if money is involved, use billing.
 
 ## Must never
 - Take real actions (unlock, refund, change accounts)
